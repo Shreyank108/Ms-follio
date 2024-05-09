@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows 11 Clone</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="shortcut icon" href="img/icons/favicon.png" sizes="152x152">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+    />
+</head>
+
+<body>
+
+    <video autoplay muted id="myVideo">
+        <source src="/video/video.webm" type="video/webm">
+    </video>
+
+    <div class="icons">
+        <img src="/img/icons/edge.svg" alt="" style="width: 44px;">
+        <div>Microsoft Edge</div>
+    </div>
+
+    <div class="icons">
+        <img src="img/icons/recyclebinicon.png" alt="" style="width: 44px;">
+        <div>Recycle Bin</div>
+    </div>
+    <a href="/myport">
+        <div class="icons">
+            <img src="img/icons/portfollio.png" alt="" style="width: 44px;">
+            <div>Shreyank.ms</div>
+        </div>
+    </a>
+   
+
+
+    <div class="taskbar">
+        <div class="weather">
+            <img src="img/icons/cloudyDay.svg" alt="" class="icon">
+            <div class="info">
+                <p>16°C</p>
+                <p>Parc. soleado</p>
+            </div>
+        </div>
+
+        <img id="Menu" src="img/icons/startButton.png" alt="Start Menu">
+        <img id="SearchIcon" src="img/icons/search-icon.svg" alt="Search">
+        <img id="TaskView" src="img\icons\taskView.svg" alt="TaskView">
+        <img id="Widgets" src="img\icons\widgets.svg" alt="Widgets">
+
+        <div class="rightTaskbar">
+            <img src="img\icons\up.svg" alt="" onclick="Fullscreen()" title="CLICK HERE FOR FULL SCREEN">
+            <img src="img\icons\keyboard.svg" alt="">
+
+            <div class="action-center-button" onclick="document.getElementById('acCheck').click()">
+                <img src="img\icons\wifi.svg" alt="">
+                <img src="img\icons\speaker.svg" alt="">
+                <img src="img\icons\batteryFull.svg" alt="">
+            </div>
+
+            <div class="time" id="DateTime">
+                <div id="timedate">
+                    <a id="h">12</a>:<a id="m">00</a>
+                    <!-- <a id="s">00</a>: -->
+                    <a id="mi">000</a>
+                    <br />
+                    <a id="d">01</a>/<a id="mon">1</a>/<a id="y">0</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="startMenuPlace">
+        <!-- <div class="startmenu" style="bottom: 50px; transform: translateX(0px);"> -->
+        <div class="startmenu">
+            <div class="search">
+                <div class="SearchIcon"></div>
+                <input type="text" class="SearchInput" id="myInput" onkeyup="myFunction()"
+                    placeholder="Search for names.." title="Search for your Favorite Application">
+            </div>
+            <div class="pinned">
+
+                <div class="start-top-elements">
+                    <span>Pinned</span>
+                    <button class="openAll" id="allapps">All apps <img src="img/icons/right.svg" alt="open all apps"
+                            class="smallRight"></button>
+                </div>
+
+                <div class="start-icons" id="myICONS">
+                   <a href="/me"><figure id="startWord">
+                    <img src="img/icons/user2.png" alt="MS Word icon">
+                    <figcaption>Me</figcaption>
+                </figure></a>
+                     <a href="/skill">
+                        <figure id="startEdge">
+                            <img src="img/icons/skills.png" alt="Windows 11 Edge icon">
+                            <figcaption>Skills</figcaption>
+                        </figure>
+                     </a>
+                     <a href="/achievements">
+                        <figure id="startPowerPoint">
+                            <img src="img/icons/achievements.png" alt="PowerPoint icon">
+                            <figcaption>Achievements</figcaption>
+                        </figure>
+                     </a>
+                     <a href="/experiences">
+                        <figure id="startExcel" onclick="executeProgram('excel')">
+                            <img src="img/icons/experience.png" alt="MS Excel icon">
+                            <figcaption>Experience</figcaption>
+                        </figure>
+                     </a>
+                    <a href="">
+                        <figure id="startPhotos">
+                            <img src="img/icons/photos.svg" alt="Windows Photos icon">
+                            <figcaption>Photos</figcaption>
+                        </figure>
+                    </a>
+                    <a href="/blender_projects">
+                        <figure id="startPhotos">
+                            <img src="img/icons/blender.png" alt="Windows Photos icon">
+                            <figcaption>Blender</figcaption>
+                        </figure>
+                    </a>
+                     <a href="mailto:shreyankagrawal17@gmail.com">
+                        <figure id="startMail">
+                            <img src="img/icons/mail.svg" alt="Windows Mail icon">
+                            <figcaption>Mail</figcaption>
+                        </figure>
+                     </a>
+                    <a href="https://www.linkedin.com/in/shreyank-agrawal-78a2a0254/">
+                        <figure id="startLinkedIn">
+                            <img src="img/icons/linkedIn.svg" alt="LinkedIn icon">
+                            <figcaption>LinkedIn</figcaption>
+                        </figure>
+                    </a>
+                    <a href="https://github.com/Shreyank108">
+                        <figure id="startLinkedIn">
+                            <img src="img/icons/github.png" alt="LinkedIn icon">
+                            <figcaption>Github</figcaption>
+                        </figure>
+                    </a>
+                    <a href="https://leetcode.com/u/shreyankagrawal17/">
+                        <figure id="startStore">
+                            <img src="img/icons/leetcode.png" alt="Windows 11 Microsoft Store icon">
+                            <figcaption>Leetcode</figcaption>
+                        </figure>
+                    </a>
+                    
+                   <a href="https://www.hackerrank.com/profile/shreyankagrawal2">
+                    <figure id="startCalendar">
+                        <img src="img/icons/hackerrank.png" alt="Windows Calender icon">
+                        <figcaption>Hackerrank</figcaption>
+                    </figure>
+                   </a>
+                    <a href="https://www.codechef.com/users/shreyankagrawa">
+                        <figure id="startOneNote">
+                            <img src="img/icons/codechef.png" alt="OneNote icon">
+                            <figcaption>Codechef</figcaption>
+                        </figure>
+                    </a>
+                    <a href="https://www.kaggle.com/shreyank108">
+                        <figure id="startYourPhone">
+                            <img src="img/icons/kaggle.png" alt="Windows Your Phone icon">
+                            <figcaption>Kaggle</figcaption>
+                        </figure>
+                    </a>
+                    <a href="">
+                        <figure id="startToDo">
+                            <img src="img/icons/notepad.png" alt="Microsoft To DO icon">
+                            <figcaption>Notepad</figcaption>
+                        </figure>
+                    </a>
+                    <a href="">
+                        <figure id="startSettings" onclick="executeProgram('settings')">
+                            <img src="img/icons/settings.svg" alt="Windows 11 Settings icon">
+                            <figcaption>Settings</figcaption>
+                        </figure>
+                    </a>
+                    <a href="">
+                        <figure id="startWhiteboard">
+                            <img src="img/icons/resume.png" alt="Windows Whiteboard icon">
+                            <figcaption>Resume</figcaption>
+                        </figure>
+                    </a>
+                    
+
+                </div>
+            </div>
+            <div class="recommended">
+                <div class="start-top-elements">
+                    <span>Recommended</span>
+                    <button class="openAll" id="allapps">More <img src="img/icons/right.svg" alt="open all apps"
+                            class="smallRight"></button>
+                </div>
+            </div>
+            <div class="profile">
+                <a href="/myport">
+                    <div class="user">
+                        <img src="img/icons/user.png" alt="Windows 11 User icon">
+                        <span>Shreyank Agrawal</span>
+                    </div>
+                </a>
+                
+                <img src="img/icons/shutdown.svg" alt="Windows 11 Shutdown icon" id="shutdown">
+            </div>
+
+        </div>
+    </div>
+
+    <div class="searchmenu">
+        <div class="search">
+            <div class="SearchIcon"></div>
+            <input type="text" class="SearchInput" id="myInput1" onkeyup="myFunction1()"
+                placeholder="Search for names.." title="Search for your Favorite Application">
+        </div>
+        <div class="pinned">
+
+            <div class="search-top-elements">
+                <span style="font-weight: 700;">All</span>
+                <span>Apps</span>
+                <span>Documents</span>
+                <span>Web</span>
+                <span>More<img src="img\icons\down.svg" alt="open all apps" class="moreSearch"></span></button>
+            </div>
+            <div class="topApps">
+                <span>Top Apps</span>
+                <div class="Search-Apps-Icons" id="myICONS1"> 
+                    <a href="">
+                        <figure id="DefaultDisplaySearch">
+                            <img src="img/icons/aboutme.png" alt="Windows 11 Edge icon">
+                            <figcaption>About Me</figcaption>
+                        </figure>
+                    </a>
+                    <a href="">
+                        <figure id="DefaultDisplaySearch">
+                            <img src="img/icons/linkedIn.svg" alt="Windows Calculator icon">
+                            <figcaption>Linkdin</figcaption>
+                        </figure>
+                    </a>
+                    
+                    <a href="">
+                        <figure id="DefaultDisplaySearch">
+                            <img src="img/icons/github.png" alt="MS Word icon">
+                            <figcaption>Github</figcaption>
+                        </figure>
+                    </a>
+
+                   <a href="/myport">
+                    <figure id="DefaultDisplaySearch" onclick="executeProgram('settings')">
+                        <img src="img/icons/animation.png" alt="Windows 11 Settings icon">
+                        <figcaption>Animation</figcaption>
+                    </figure>
+                   </a>
+
+                    <a href="">
+                        <figure id="DefaultDisplaySearch">
+                            <img src="img/icons/resume.png" alt="PowerPoint icon">
+                            <figcaption>Resume</figcaption>
+                        </figure>
+                    </a>
+
+                    
+                </div>
+            </div>
+
+            <div class="recentSearches">
+                <span>Recent</span>
+                <div class="Recent-Apps-Icons">
+                    <figure id="Recent-Searches">
+                        <img src="img\icons\clock.svg" alt="Clock icon">
+                        <figcaption>Clock</figcaption>
+                    </figure>
+                    <figure id="Recent-Searches" onclick="executeProgram('settings')">
+                        <img src="img/icons/settings.svg" alt="Windows 11 Settings icon">
+                        <figcaption>Settings</figcaption>
+                    </figure>
+                    <figure id="Recent-Searches">
+                        <img src="img\icons\yourPhone.svg" alt="Your Phone icon">
+                        <figcaption>Your Phone</figcaption>
+                    </figure>
+
+                    <figure id="Recent-Searches">
+                        <img src="img\icons\vscode.svg" alt="VS Code icon">
+                        <figcaption>VS Code</figcaption>
+                    </figure>
+
+                    <figure id="Recent-Searches">
+                        <img id="terminal" src="img\icons\terminal.svg" alt="Terminal icon">
+                        <figcaption>Terminal</figcaption>
+                    </figure>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- <div class="widgetMenu" style="left: 0px;"> -->
+    <div class="widgetMenu">
+        <div class="time">
+            <div class="timedate_Of_Widgets">
+                <a class="hours">00</a>:
+                <a class="minutes">00 </a>&nbsp;
+                <a class="am_pm">AM </a>
+            </div>
+        </div>
+
+        <div class="WidgetsPlace">
+
+            <div class="AllWidget Wheather">
+                <div class="topMenuWidget">
+                    <div>
+                        <img src="img/icons/cloudyDay.svg" alt="">
+                        <span class="MainApp">Wheather</span>
+                    </div>
+
+                    <img src="img\icons\more-info.png" class="moreInfo"></img>
+                </div>
+
+                <div class="MainContentWindow">
+                    <img src="img\icons\sun-icon.png" alt="">
+
+                    <div class="leftPart">
+                        <div class="Part1">
+                            <img src="img\icons\home.png" alt="">
+                            <p>Bhopal M.P.</p>
+
+                        </div>
+                        <div class="Part2">
+                            <span>42°C</span>
+                            <p>Strong UV Today</p>
+                        </div>
+                        <div class="Part3">
+                            See Full Forecast
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="AllWidget MicrosoftEdge">
+                <div class="topMenuWidget">
+                    <div>
+                        <img src="img\icons\edge.svg" alt="">
+                        <span class="MainApp">Microsoft Edge</span>
+                    </div>
+
+                    <img src="img\icons\more-info.png" class="moreInfo"></img>
+                </div>
+
+                <div class="MainContentWindow">
+                    <div class="search">
+                        <div class="SearchIcon"></div>
+                        <input type="text" class="SearchInput" id="myInput1" onkeyup="" placeholder="Search on Web.."
+                            title="Search on Web">
+                    </div>
+                    <p>
+                        <img src="img\icons\location-pin.png" alt="">Bhopal M.P.
+                    </p>
+                </div>
+            </div>
+            <div class="AllWidget MicrosoftOneDrive">
+                <div class="topMenuWidget">
+                    <div>
+                        <img src="img\icons\icons8-microsoft-onedrive-2019.svg" alt="">
+                        <span class="MainApp">Photos</span>
+                    </div>
+                    <img src="img\icons\more-info.png" class="moreInfo"></img>
+                </div>
+
+                <div class="heading">On this Day</div>
+                <div class="subHeading">
+                    <span>OCT 22</span>
+                    <p>See all</p>
+                </div>
+
+                <div class="Images">
+                    <img src="https://308286-943399-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2022/03/stylish-standard-whatsapp-dp-for-boys.png"
+                        alt="" style="border-radius: 0 0 0 8px;">
+
+
+                    <div>
+                        <span>
+                            <img src="https://c4.wallpaperflare.com/wallpaper/757/370/472/heavy-bike-harley-davidson-harley-davidson-modified-wallpaper-preview.jpg"
+                                alt="">
+                            <img src="https://wallpaperaccess.com/full/124378.jpg" alt=""
+                                style="border-radius: 0 0 8px 0;">
+                        </span>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="AllWidget MicrosoftToDo"></div>
+        </div>
+    </div>
+
+    <!-- Date Time Menu -->
+    <div class="container-date-time" id="DateTimeMenu">
+        <div class="notification">
+            <h1>Notifications</h1>
+        </div>
+        <div class="week-month-date"></div>
+        <div class="calendar">
+            <div class="month">
+                <div class="date">
+                    <h1></h1>
+                    <div class="prev-next">
+                        <i class="fas fa-angle-left prev"><b>&#60;</b></i>
+                        <i class="fas fa-angle-right next"><b>&#62;</b></i>
+                    </div>
+                </div>
+
+            </div>
+            <div class="weekdays">
+                <div>Su</div>
+                <div>Mo</div>
+                <div>Tue</div>
+                <div>We</div>
+                <div>Th</div>
+                <div>Fr</div>
+                <div>Sa</div>
+            </div>
+            <div class="days"></div>
+        </div>
+    </div>
+
+    <div class="terminal">
+        <nav> <p>cmd</p> <i id="cancel_button" class="ri-close-line"></i></nav> <br>
+        <textarea >
+Copyright (C) Microsoft Corporation. All rights reserved. 
+Install the latest PowerShell for new features and improvements! 
+https://aka.ms/PSWindows 
+PS C:\Users\ASUS\Desktop\Microsoft-Profile> Shreyank . 
+PS C:\Users\ASUS\Desktop\Microsoft-Profile> ❤️ u Microsoft 
+PS C:\Users\ASUS\Desktop\Microsoft-Profile>
+        </textarea>
+        
+    </div>
+
+
+</body>
+<script src="/javascripts/script.js"></script>
+
+</html>
