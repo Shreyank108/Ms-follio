@@ -29,5 +29,8 @@ router.get('/skill', function(req, res, next) {
 router.get('/blender_projects', function(req, res, next) {
   res.render('blender_proj');
 });
+router.get('/mobile_view', function(req, res, next) {
+  res.render('mobile');
+});
 
 module.exports = router;
